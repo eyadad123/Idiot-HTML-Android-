@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form {
+            border: 3px solid #f1f1f1;
+            margin: auto;
+            width: 50%;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .container {
+            padding: 16px;
+        }
+        #captcha {
+            font-family: monospace;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sign In</h2>
+    <form action="action_page.html" method="post">
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <p>Please enter the characters you see below:</p>
+            <div id="captcha">99WJDSA</div>
+            <input type="text" id="input">
+
+            <button type="button" onclick="check()">Login</button>
+        </div>
+    </form>
+    <script>
+        function check() {
+            var captcha = document.getElementById('captcha').textContent;
+            var input = document.getElementById('input').value;
+            if (input === captcha) {
+                alert('CAPTCHA passed!');
+                document.querySelector('form').submit();
+            } else {
+                alert('CAPTCHA failed. Please try again.');
+                document.getElementById('input').value = '';
+                document.getElementById('input').focus();
+            }
+        }
+    </script>
+</body>
+</html>

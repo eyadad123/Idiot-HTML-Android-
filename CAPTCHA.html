@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake CAPTCHA Test</title>
+    <style>
+        #captcha {
+            font-family: monospace;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake CAPTCHA Test</h1>
+    <p>Please enter the characters you see below:</p>
+    <div id="captcha">ABCD</div>
+    <form>
+        <input type="text" id="input">
+        <button type="button" onclick="check()">Submit</button>
+    </form>
+    <script>
+        function check() {
+            var captcha = document.getElementById('captcha').textContent;
+            var input = document.getElementById('input').value;
+            if (input === captcha) {
+                alert('CAPTCHA passed!');
+            } else {
+                alert('CAPTCHA failed. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

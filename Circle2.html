@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.top {
+  background-color: rgba(0, 0, 150, 0.5);
+  height: 50px;
+}
+
+body {
+  background-image: url('https://images.designtrends.com/wp-content/uploads/2016/03/29115235/Abstract-Plain-White-Wallpaper-.jpg');
+  margin: 0;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid blue;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+}
+
+.text {
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+</style>
+<script>
+window.setTimeout(function() {
+    window.location.href = 'HTML.html';
+}, 3000);
+</script>
+</head>
+<body>
+
+<div class="top"></div>
+
+<h2>Please Wait...</h2>
+
+<div class="container">
+  <div class="loader"></div>
+  <div class="text">Get Ready To See Your Device In 3 Seconds!</div>
+</div>
+
+</body>
+</html>
